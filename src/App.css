@@ -9,6 +9,6 @@
     font-size: 0.6rem;
   }
   .App{
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
   }
 }
