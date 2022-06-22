@@ -94,4 +94,7 @@ section span.sign{
         width: 100%;
         margin-left: 10px;
     }
+    .content{
+        padding: 20px 40px;
+    }
 }
