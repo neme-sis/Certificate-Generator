@@ -2,4 +2,13 @@
   background-color: rgb(127, 127, 127);
   min-height: 100vh;
   display: flex;
+  flex-wrap: nowrap;
+}
+@media only screen and (max-width: 600px) {
+  :root{
+    font-size: 0.6rem;
+  }
+  .App{
+    flex-wrap: wrap-reverse;
+  }
 }

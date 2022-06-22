@@ -38,16 +38,16 @@ h1{
     position: absolute;
     font-family:  Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
     font-size: 1.2rem;
-    bottom: 90px;
+    bottom: 20%;
     color: rgb(10, 96, 255);
-    width: 120px;
+    width: 22%;
     text-align: center;
 }
 .certificate section::before{
     content: " ";
     position: absolute;
     height: 2px;
-    width: 100px;
+    width: 70%;
     background-color: rgb(10, 96, 255);
     opacity: 0.65;
     top: -20%;
@@ -55,16 +55,15 @@ h1{
     transform: translate(-50%, 50%);
 }
 #date{
-    left: 100px;
+    left: 20%;
 }
 #signature{
-    right: 120px;
+    right: 20%;
 }
 section span{
     position: absolute;
-    width: 120px;
+    width: 25%;
     top: -125%;
-    left: -50%;
     transform: translate(50%, 0%);
     font-style: oblique;
     font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
@@ -72,6 +71,8 @@ section span{
 }
 section span.date{
     font-family: cursive;
+    /* left: -2%; */
+    transform: none;
 }
 section span.sign{
     transform: translate(50%, 0%) skew(30deg) rotate(-10deg);
@@ -86,4 +87,10 @@ section span.sign{
     0px 3px blue,
     0px 4px black
     ,0px 5px royalblue;
+}
+@media only screen and (max-width: 600px) {
+    .certificate-div{
+        width: 100%;
+        margin-left: 10px;
+    }
 }
