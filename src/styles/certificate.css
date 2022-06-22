@@ -64,18 +64,19 @@ section span{
     position: absolute;
     width: 25%;
     top: -125%;
-    transform: translate(50%, 0%);
     font-style: oblique;
     font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     color: rgb(0, 0, 143);
 }
 section span.date{
     font-family: cursive;
-    /* left: -2%; */
-    transform: none;
+    /* left: 0; */
+    width: 100%;
+    left: -2%;
+    text-align: center;
 }
 section span.sign{
-    transform: translate(50%, 0%) skew(30deg) rotate(-10deg);
+    transform: skew(30deg) rotate(-10deg);
 }
 .title{
     padding-top: 70px;

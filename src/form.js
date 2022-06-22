@@ -18,7 +18,7 @@ const Form = () => {
     sign: ""
   }
 
-  const [GlobalCertificateInfo, setGlobalCertificateInfo] = useContext(GlobalInfo)
+  const  setGlobalCertificateInfo = useContext(GlobalInfo)[1]
 
 
   const [certificateInfoUploaded, setCertificateInfoUploaded] = useState(certificateInfo)
@@ -26,7 +26,7 @@ const Form = () => {
 
   useEffect(()=>{
     setGlobalCertificateInfo(certificateInfoUploaded)
-  },[certificateInfoUploaded])
+  },[certificateInfoUploaded, setGlobalCertificateInfo])
 
 
 

@@ -10,7 +10,7 @@ export const refContainer = React.createRef()
 
 const Certificate = () => {
 
-  const [GlobalCertificateInfo, setGlobalCertificateInfo] = useContext(GlobalInfo)
+  const GlobalCertificateInfo = useContext(GlobalInfo)[0]
 
   const { name, ach, ins, date, sign } = GlobalCertificateInfo
   // console.log(GlobalCertificateInfo);
