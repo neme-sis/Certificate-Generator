@@ -1,0 +1,53 @@
+*{
+    --font1: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.form-div{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    min-height: 80%; 
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: 10px 10px 20px royalblue;
+}
+.form *{
+    margin: .5em;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+.normal-header{
+    text-align: center;
+    color: royalblue;
+    text-shadow: 3px 3px 5px gray
+}
+form input{
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid;
+    font-size: 1.25rem;
+}
+input::placeholder{
+    font-family: var(--font1);
+    font-size: .75em;
+    font-weight: lighter;
+}
+h6{
+    font-weight: 200;
+    color: rgb(255, 111, 111);
+}
+button{
+    height: 40px;
+    background-color: royalblue;
+    color: white;
+    font-family: var(--font1);
+    width: 200px;
+    align-self: center;
+    border: none;
+    box-shadow: 2px 2px 5px blue;
+}

@@ -1,0 +1,89 @@
+.certificate-div{
+    width: 60%;
+    height: 90vh;
+    align-self: center;
+    margin: 10px;
+    margin-left: 30px;
+    background-color: white;
+    box-shadow: 5px 5px 10px royalblue;
+    user-select: none;
+    position: relative;
+}
+.certificate{
+    height: 85%;
+    background-image: url("../assets/certificate_frame.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+h1{
+    margin-bottom: 10px;
+}
+.content{
+    line-height: 150%;
+    padding: 20px 80px;
+    text-align: center;
+    color: rgb(0, 0, 143);
+    font-weight: 500;
+    font-style: oblique;
+    font-family:  Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+.content .vari{
+    font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+    text-shadow: 0px 1px rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 800;
+}
+.certificate section{
+    position: absolute;
+    font-family:  Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 1.2rem;
+    bottom: 90px;
+    color: rgb(10, 96, 255);
+    width: 120px;
+    text-align: center;
+}
+.certificate section::before{
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: 100px;
+    background-color: rgb(10, 96, 255);
+    opacity: 0.65;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+#date{
+    left: 100px;
+}
+#signature{
+    right: 120px;
+}
+section span{
+    position: absolute;
+    width: 120px;
+    top: -125%;
+    left: -50%;
+    transform: translate(50%, 0%);
+    font-style: oblique;
+    font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    color: rgb(0, 0, 143);
+}
+section span.date{
+    font-family: cursive;
+}
+section span.sign{
+    transform: translate(50%, 0%) skew(30deg) rotate(-10deg);
+}
+.title{
+    padding-top: 70px;
+    color: royalblue;
+    text-align: center;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    text-shadow: 0px 1px royalblue
+    , 0px 2px black,
+    0px 3px blue,
+    0px 4px black
+    ,0px 5px royalblue;
+}
