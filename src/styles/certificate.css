@@ -1,6 +1,6 @@
 .certificate-div{
     width: 60%;
-    height: 90vh;
+    min-height: 60vh;
     align-self: center;
     margin: 10px;
     margin-left: 30px;
@@ -14,6 +14,7 @@
     background-image: url("../assets/certificate_frame.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    padding-bottom: 30%;
 }
 h1{
     margin-bottom: 10px;
@@ -63,7 +64,7 @@ h1{
 section span{
     position: absolute;
     width: 25%;
-    top: -125%;
+    top: -130%;
     font-style: oblique;
     font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     color: rgb(0, 0, 143);
