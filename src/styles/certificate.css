@@ -8,6 +8,7 @@
     box-shadow: 5px 5px 10px royalblue;
     user-select: none;
     position: relative;
+    border-radius: 20px;
 }
 .certificate{
     height: 85%;
@@ -15,6 +16,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding-bottom: 30%;
+    margin-bottom: 1rem;
 }
 h1{
     margin-bottom: 10px;
@@ -90,12 +92,12 @@ section span.sign{
     0px 4px black
     ,0px 5px royalblue;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .certificate-div{
-        width: 100%;
+        width: Min(100%, 750px);
         margin-left: 10px;
     }
     .content{
-        padding: 20px 40px;
+        padding: 20px 70px;
     }
 }
