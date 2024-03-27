@@ -1,7 +1,8 @@
-import "./App.css"
+import React from "react";
+import "./App.css";
 import Certificate from "./Certificate";
-import Form from "./form";
-import { ProviderInfo } from "./context/provider";
+import Form from "./Form";
+import { ProviderInfo } from "./context/Provider";
 function App() {
   return (
     <div className="App">

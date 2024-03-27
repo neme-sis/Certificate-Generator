@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./styles/form.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { GlobalInfo } from "./context/provider";
+import { GlobalInfo } from "./context/Provider";
 import { refContainer } from "./Certificate";
 
 const Form = () => {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import "./styles/certificate.css"
-import Header from './assets/header'
-import { GlobalInfo } from './context/provider'
+import Header from './assets/Header'
+import { GlobalInfo } from './context/Provider'
 
 export const refContainer = React.createRef()
 
