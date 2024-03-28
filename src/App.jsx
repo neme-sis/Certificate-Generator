@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Certificate from "./Certificate";
-import Form from "./Form";
+import Certificate from "./components/Certificate";
+import Form from "./components/Form";
 import { ProviderInfo } from "./context/Provider";
 function App() {
   return (
