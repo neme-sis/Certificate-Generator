@@ -25,11 +25,12 @@
 }
 .normal-header {
   text-align: center;
-  color: royalblue;
-  text-shadow: 3px 3px 5px gray;
+  color: rgb(175, 215, 255);
+  text-shadow: 1px 1px 2px #29334a;
 }
-form label{
+form label {
   margin-top: 1rem;
+  color: #29334a;
 }
 form input {
   height: 30px;
@@ -42,6 +43,7 @@ input::placeholder {
   font-family: var(--font1);
   font-size: 0.75em;
   font-weight: lighter;
+  color: #bcc9ea;
 }
 input:focus {
   outline: none;
@@ -61,6 +63,7 @@ button {
   box-shadow: 2px 2px 5px blue;
   cursor: pointer;
   margin: 2rem 0;
+  font-size: 1.15rem;
 }
 @media only screen and (max-width: 900px) {
   .form-div {
