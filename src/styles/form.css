@@ -17,9 +17,10 @@
   width: 100%;
   margin: 0 1rem;
   box-shadow: 3px 3px 6px rgb(222, 230, 255);
+  padding: 1rem 2rem;
 }
 .form * {
-  margin: 0.5em;
+  /* margin: 0.5em; */
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 .normal-header {
@@ -27,11 +28,15 @@
   color: royalblue;
   text-shadow: 3px 3px 5px gray;
 }
+form label{
+  margin-top: 1rem;
+}
 form input {
   height: 30px;
   border: 0;
   border-bottom: 1px solid;
   font-size: 1.25rem;
+  margin-top: 0.5rem;
 }
 input::placeholder {
   font-family: var(--font1);
@@ -55,6 +60,7 @@ button {
   border: none;
   box-shadow: 2px 2px 5px blue;
   cursor: pointer;
+  margin: 2rem 0;
 }
 @media only screen and (max-width: 900px) {
   .form-div {

@@ -35,4 +35,6 @@ export function loadUpdatedCanvas(canvas, imgUrl, textsWithStyles = []) {
     });
   };
   certificateImage.src = imgUrl;
+  //to omit the flicker between changing the background and the image
+  canvas.style.background = `url(${canvas.toDataURL("image/png")})`
 }

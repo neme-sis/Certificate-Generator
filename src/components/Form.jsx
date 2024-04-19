@@ -31,9 +31,7 @@ const Form = () => {
   return (
     <div className="form-div">
       <form className="form" onSubmit={saveAndDownloadHandler}>
-        <header>
-          <h1 className="normal-header">Details</h1>
-        </header>
+        <h1 className="normal-header">Details</h1>
         {certificateOneFields.map((field) => {
           return (
             <Fragment key={field.id}>
