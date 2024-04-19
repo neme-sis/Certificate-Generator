@@ -16,6 +16,8 @@ function loadTextOnCanvas(ctx, text, style, canvas) {
 }
 
 export function loadUpdatedCanvas(canvas, imgUrl, textsWithStyles = []) {
+  //to omit the flicker between changing the background and the image
+  canvas.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
   let ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx = canvas.getContext("2d");
@@ -35,6 +37,4 @@ export function loadUpdatedCanvas(canvas, imgUrl, textsWithStyles = []) {
     });
   };
   certificateImage.src = imgUrl;
-  //to omit the flicker between changing the background and the image
-  canvas.style.background = `url(${canvas.toDataURL("image/png")})`
 }
