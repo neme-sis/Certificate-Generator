@@ -4,6 +4,7 @@ import { useCertificateInfo } from "../hooks/useCertificateInfo";
 import certificateImgUrl from "../assets/Certificate_1.png";
 import { loadUpdatedCanvas } from "../helpers/CanvasControllers";
 import { certificateOneFields, certificateOneTextFieldStyles } from "../data";
+import { CertificateFields } from "../constants";
 
 const Certificate = () => {
   const { globalCertificateInfo, canvasRef } = useCertificateInfo();
@@ -27,12 +28,17 @@ const Certificate = () => {
           };
         });
       const updateCanvas = () =>
-        loadUpdatedCanvas(canvasRef.current, certificateImgUrl, textWithStyles);
+        loadUpdatedCanvas(
+          canvasRef.current,
+          certificateImgUrl,
+          textWithStyles,
+          globalCertificateInfo[CertificateFields.AuthoritySignature]
+        );
 
       let timeout = setTimeout(updateCanvas, 500);
 
       const resizeHandlers = () => {
-        loadUpdatedCanvas(canvasRef.current, certificateImgUrl, textWithStyles);
+        updateCanvas();
       };
 
       window.addEventListener("resize", resizeHandlers);

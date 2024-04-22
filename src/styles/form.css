@@ -28,15 +28,15 @@
   color: rgb(175, 215, 255);
   text-shadow: 1px 1px 2px #29334a;
 }
-form label {
+.form label {
   margin-top: 1rem;
   color: #29334a;
 }
-form input {
+.form input {
   height: 30px;
   border: 0;
   border-bottom: 1px solid;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   margin-top: 0.5rem;
 }
 input::placeholder {
@@ -52,7 +52,7 @@ h6 {
   font-weight: 200;
   color: rgb(255, 111, 111);
 }
-button {
+.form .download-certificate-btn {
   height: 40px;
   background-color: royalblue;
   color: white;
@@ -64,6 +64,21 @@ button {
   cursor: pointer;
   margin: 2rem 0;
   font-size: 1.15rem;
+  border-radius: 6px;
+}
+.form .download-certificate-btn:active {
+  box-shadow: none;
+}
+.form .open-signature-modal-btn {
+  height: 30px;
+  background-color: #29334a;
+  color: #ece4ff;
+  width: 150px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  border-radius: 6px;
 }
 @media only screen and (max-width: 900px) {
   .form-div {

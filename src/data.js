@@ -33,12 +33,12 @@ export const certificateOneFields = [
     isTextField: true,
     defaultValue: "<CEO of Company>",
   },
-  {
-    label: "Authority Signature",
-    name: CertificateFields.AuthoritySignature,
-    id: CertificateFields.AuthoritySignature.toLowerCase(),
-    placeholder: "Enter authority signature: ",
-  },
+  // {
+  //   label: "Authority Signature",
+  //   name: CertificateFields.AuthoritySignature,
+  //   id: CertificateFields.AuthoritySignature.toLowerCase(),
+  //   placeholder: "Enter authority signature: ",
+  // },
 ];
 
 export const certificateOneTextFieldStyles = {

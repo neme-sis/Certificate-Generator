@@ -16,7 +16,7 @@ function loadTextOnCanvas(ctx, text, style, canvas) {
 }
 
 function adjustOverflows(textsWithStyles, canvas) {
-  const updatedTextsWithStyles = []
+  const updatedTextsWithStyles = [];
   textsWithStyles.map((textWithStyle) => {
     const width = 1.25 * canvas.width;
     const style = textWithStyle.style ? textWithStyle.style : defaultStyle;
@@ -29,11 +29,14 @@ function adjustOverflows(textsWithStyles, canvas) {
     const brokenSentences = [];
     let sentence = "";
     words.forEach((word, index) => {
-      if(index === 0) {
+      if (index === 0) {
         sentence = word;
         return;
       }
-      if (width - 100 > fontSize * sentence.length + fontSize * (word.length + 1)) {
+      if (
+        width - 100 >
+        fontSize * sentence.length + fontSize * (word.length + 1)
+      ) {
         sentence += ` ${word}`;
       } else {
         brokenSentences.push(sentence);
@@ -46,7 +49,8 @@ function adjustOverflows(textsWithStyles, canvas) {
         text: sentence,
         style: {
           ...style,
-          getHeight: (canvas) => style.getHeight(canvas) + (index * (fontSize + 10)),
+          getHeight: (canvas) =>
+            style.getHeight(canvas) + index * (fontSize + 10),
         },
       });
     });
@@ -54,7 +58,12 @@ function adjustOverflows(textsWithStyles, canvas) {
   return updatedTextsWithStyles;
 }
 
-export function loadUpdatedCanvas(canvas, imgUrl, textsWithStyles = []) {
+export function loadUpdatedCanvas(
+  canvas,
+  imgUrl,
+  textsWithStyles = [],
+  signatureUrl = ""
+) {
   //to omit the flicker between changing the background and the image
   canvas.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
 
@@ -78,6 +87,15 @@ export function loadUpdatedCanvas(canvas, imgUrl, textsWithStyles = []) {
         canvas
       );
     });
+
+    if (signatureUrl) {
+      const image = new Image();
+      image.src = signatureUrl;
+
+      image.onload = () => {
+        ctx.drawImage(image, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
+      };
+    }
   };
   certificateImage.src = imgUrl;
 }
