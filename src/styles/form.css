@@ -1,69 +1,94 @@
-*{
-    --font1: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+* {
+  --font1: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.form-div{
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid rgb(159, 183, 255);
+.form-div {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgb(222, 230, 255);
 }
-.form{
-    min-height: 80%; 
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 1rem;
-    box-shadow: 10px 10px 20px royalblue;
+.form {
+  min-height: 80%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 1rem;
+  box-shadow: 3px 3px 6px rgb(222, 230, 255);
+  padding: 1rem 2rem;
 }
-.form *{
-    margin: .5em;
-    font-family:Georgia, 'Times New Roman', Times, serif
+.form * {
+  /* margin: 0.5em; */
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.normal-header{
-    text-align: center;
-    color: royalblue;
-    text-shadow: 3px 3px 5px gray
+.normal-header {
+  text-align: center;
+  color: rgb(175, 215, 255);
+  text-shadow: 1px 1px 2px #29334a;
 }
-form input{
-    height: 30px;
-    border: 0;
-    border-bottom: 1px solid;
-    font-size: 1.25rem;
+.form label {
+  margin-top: 1rem;
+  color: #29334a;
 }
-input::placeholder{
-    font-family: var(--font1);
-    font-size: .75em;
-    font-weight: lighter;
+.form input {
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid;
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
 }
-input:focus{
-    outline: none;
+input::placeholder {
+  font-family: var(--font1);
+  font-size: 0.75em;
+  font-weight: lighter;
+  color: #bcc9ea;
 }
-h6{
-    font-weight: 200;
-    color: rgb(255, 111, 111);
+input:focus {
+  outline: none;
 }
-button{
-    height: 40px;
-    background-color: royalblue;
-    color: white;
-    font-family: var(--font1);
-    width: 200px;
-    align-self: center;
-    border: none;
-    box-shadow: 2px 2px 5px blue;
+h6 {
+  font-weight: 200;
+  color: rgb(255, 111, 111);
+}
+.form .download-certificate-btn {
+  height: 40px;
+  background-color: rgb(111, 147, 255);
+  color: white;
+  font-family: var(--font1);
+  width: 200px;
+  align-self: center;
+  border: none;
+  box-shadow: 2px 2px 5px rgb(100, 100, 255);
+  cursor: pointer;
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  border-radius: 6px;
+}
+.form .download-certificate-btn:active {
+  box-shadow: none;
+}
+.form .open-signature-modal-btn {
+  height: 30px;
+  background-color: #29334a;
+  color: #ece4ff;
+  width: 150px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  border-radius: 6px;
 }
 @media only screen and (max-width: 900px) {
-    .form-div{
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid rgb(159, 183, 255);
-        margin-bottom: 2rem;
-    }
-    .form{
-        margin: 2rem 1rem;
-        max-width: 700px;
-    }
+  .form-div {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgb(159, 183, 255);
+    margin-bottom: 2rem;
+  }
+  .form {
+    margin: 2rem 1rem;
+    max-width: 700px;
+  }
 }
