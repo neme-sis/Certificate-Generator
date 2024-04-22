@@ -54,13 +54,13 @@ h6 {
 }
 .form .download-certificate-btn {
   height: 40px;
-  background-color: royalblue;
+  background-color: rgb(111, 147, 255);
   color: white;
   font-family: var(--font1);
   width: 200px;
   align-self: center;
   border: none;
-  box-shadow: 2px 2px 5px blue;
+  box-shadow: 2px 2px 5px rgb(100, 100, 255);
   cursor: pointer;
   margin: 2rem 0;
   font-size: 1.15rem;

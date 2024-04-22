@@ -25,7 +25,7 @@ const SignaturePad = ({
         <SignatureCanvas
           ref={signaturePadRef}
           penColor="rgb(20, 28, 46)"
-          canvasProps={{ height: 200, width: 400, className: "signature-pad" }}
+          canvasProps={{ height: 200, width: 300, className: "signature-pad" }}
         />
         <div className="buttons-wrapper">
           <button className="save-button" onClick={onSaveHelper}>
