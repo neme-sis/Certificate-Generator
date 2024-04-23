@@ -65,7 +65,7 @@ export function loadUpdatedCanvas(
   signatureUrl = ""
 ) {
   //to omit the flicker between changing the background and the image
-  canvas.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
+  // canvas.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
 
   let ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -75,7 +75,7 @@ export function loadUpdatedCanvas(
   certificateImage.onload = function () {
     canvas.width = certificateImage.width;
     canvas.height = certificateImage.height;
-    ctx.drawImage(certificateImage, 0, 0);
+    // ctx.drawImage(certificateImage, 0, 0);
 
     textsWithStyles = adjustOverflows(textsWithStyles, canvas);
 
