@@ -13,7 +13,6 @@ function loadTextOnCanvas(ctx, text, style, canvas) {
   ctx.fillStyle = style.color;
   ctx.textAlign = "center";
   ctx.fillText(text, style.width, style.height);
-  requestAnimationFrame(loadTextOnCanvas);
 }
 
 function adjustOverflows(textsWithStyles, canvas) {
