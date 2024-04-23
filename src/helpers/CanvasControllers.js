@@ -90,14 +90,10 @@ export async function loadUpdatedCanvas(
     );
   });
 
-  // if (signatureUrl) {
-  //   const image = new Image();
-  //   image.src = signatureUrl;
-
-  //   image.onload = () => {
-  //     ctx.drawImage(image, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
-  //   };
-  // }
-  // };
-  // certificateImage.src = imgUrl;
+  if (signatureUrl) {
+    const response = await fetch(signatureUrl);
+    const blob = await response.blob();
+    const signature = await createImageBitmap(blob);
+    ctx.drawImage(signature, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
+  }
 }

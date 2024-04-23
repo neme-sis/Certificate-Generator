@@ -14,9 +14,9 @@ const Certificate = () => {
   useEffect(() => {
     const canvas = document.querySelector("#canvas");
     const offscreenCanvas = canvas.transferControlToOffscreen();
-    canvasRef.current = offscreenCanvas;
     const worker = new OffscreenCanvasWorker();
     workerRef.current = worker;
+    worker.postMessage({ canvas: offscreenCanvas }, [offscreenCanvas]);
   }, []);
 
   useEffect(() => {
@@ -38,22 +38,20 @@ const Certificate = () => {
           };
         });
     };
-    if (canvasRef.current) {
+    if (workerRef.current) {
       const textWithStyles = getTextWithStyles();
       const worker = workerRef.current;
-      const offscreenCanvas = canvasRef.current;
 
-      const updateCanvas = () =>
+      const updateCanvas = () => {
         worker.postMessage(
           {
-            canvas: offscreenCanvas,
             certificateImgUrl,
             textWithStyles,
             signature:
               globalCertificateInfo[CertificateFields.AuthoritySignature],
-          },
-          [offscreenCanvas]
+          }
         );
+      };
 
       let timeout = setTimeout(updateCanvas, 500);
 
@@ -63,12 +61,12 @@ const Certificate = () => {
         clearTimeout(timeout);
       };
     }
-  }, [canvasRef.current, workerRef.current, globalCertificateInfo]);
+  }, [workerRef.current, globalCertificateInfo]);
 
   return (
     <div className="certificate-container-div">
       <div className="certificate-div">
-        <canvas id="canvas"></canvas>
+        <canvas ref={canvasRef} id="canvas"></canvas>
       </div>
     </div>
   );

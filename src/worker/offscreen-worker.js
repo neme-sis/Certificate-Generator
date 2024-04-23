@@ -1,7 +1,13 @@
 import { loadUpdatedCanvas } from "../helpers/CanvasControllers";
+var offscreenCanvas;
 
 self.onmessage = function (e) {
   const { certificateImgUrl, textWithStyles, signature, canvas } = e.data;
-  console.log(canvas);
-  loadUpdatedCanvas(canvas, certificateImgUrl, textWithStyles, signature);
+  if (canvas) offscreenCanvas = canvas;
+  loadUpdatedCanvas(
+    offscreenCanvas,
+    certificateImgUrl,
+    textWithStyles,
+    signature
+  );
 };
