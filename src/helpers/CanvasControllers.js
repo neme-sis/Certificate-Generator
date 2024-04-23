@@ -13,6 +13,7 @@ function loadTextOnCanvas(ctx, text, style, canvas) {
   ctx.fillStyle = style.color;
   ctx.textAlign = "center";
   ctx.fillText(text, style.width, style.height);
+  requestAnimationFrame(loadTextOnCanvas);
 }
 
 function adjustOverflows(textsWithStyles, canvas) {
@@ -49,8 +50,7 @@ function adjustOverflows(textsWithStyles, canvas) {
         text: sentence,
         style: {
           ...style,
-          getHeight: (canvas) =>
-            style.getHeight(canvas) + index * (fontSize + 10),
+          height: style.height + index * (fontSize + 10),
         },
       });
     });
@@ -66,6 +66,9 @@ export async function loadUpdatedCanvas(
 ) {
   //to omit the flicker between changing the background and the image
   // canvas.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
+  // const imgBlob = await canvas.convertToBlob();
+  // const dataURL = new FileReaderSync().readAsDataURL(imgBlob);
+  // canvas.style.backgroundImage = `url(${dataURL})`;
 
   let ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -94,6 +97,12 @@ export async function loadUpdatedCanvas(
     const response = await fetch(signatureUrl);
     const blob = await response.blob();
     const signature = await createImageBitmap(blob);
-    ctx.drawImage(signature, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
+    ctx.drawImage(
+      signature,
+      canvas.width / 2 - 100,
+      canvas.height - 400,
+      200,
+      100
+    );
   }
 }
