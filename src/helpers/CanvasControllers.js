@@ -75,7 +75,7 @@ export function loadUpdatedCanvas(
   certificateImage.onload = function () {
     canvas.width = certificateImage.width;
     canvas.height = certificateImage.height;
-    // ctx.drawImage(certificateImage, 0, 0);
+    ctx.drawImage(certificateImage, 0, 0);
 
     textsWithStyles = adjustOverflows(textsWithStyles, canvas);
 
