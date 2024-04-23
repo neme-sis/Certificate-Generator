@@ -12,7 +12,7 @@ function loadTextOnCanvas(ctx, text, style, canvas) {
   ctx.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
   ctx.fillStyle = style.color;
   ctx.textAlign = "center";
-  ctx.fillText(text, style.getWidth(canvas), style.getHeight(canvas));
+  ctx.fillText(text, style.width, style.height);
 }
 
 function adjustOverflows(textsWithStyles, canvas) {
@@ -58,7 +58,7 @@ function adjustOverflows(textsWithStyles, canvas) {
   return updatedTextsWithStyles;
 }
 
-export function loadUpdatedCanvas(
+export async function loadUpdatedCanvas(
   canvas,
   imgUrl,
   textsWithStyles = [],
@@ -71,31 +71,33 @@ export function loadUpdatedCanvas(
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx = canvas.getContext("2d");
 
-  const certificateImage = new Image();
-  certificateImage.onload = function () {
-    canvas.width = certificateImage.width;
-    canvas.height = certificateImage.height;
-    ctx.drawImage(certificateImage, 0, 0);
+  const response = await fetch("../assets/Certificate_1.png");
+  const blob = await response.blob();
+  const certificateImage = await createImageBitmap(blob);
+  // certificateImage.onload = function () {
+  canvas.width = certificateImage.width;
+  canvas.height = certificateImage.height;
+  ctx.drawImage(certificateImage, 0, 0);
 
-    textsWithStyles = adjustOverflows(textsWithStyles, canvas);
+  textsWithStyles = adjustOverflows(textsWithStyles, canvas);
 
-    textsWithStyles.forEach((textWithStyle) => {
-      loadTextOnCanvas(
-        ctx,
-        textWithStyle.text,
-        textWithStyle.style ? textWithStyle.style : defaultStyle,
-        canvas
-      );
-    });
+  textsWithStyles.forEach((textWithStyle) => {
+    loadTextOnCanvas(
+      ctx,
+      textWithStyle.text,
+      textWithStyle.style ? textWithStyle.style : defaultStyle,
+      canvas
+    );
+  });
 
-    if (signatureUrl) {
-      const image = new Image();
-      image.src = signatureUrl;
+  // if (signatureUrl) {
+  //   const image = new Image();
+  //   image.src = signatureUrl;
 
-      image.onload = () => {
-        ctx.drawImage(image, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
-      };
-    }
-  };
-  certificateImage.src = imgUrl;
+  //   image.onload = () => {
+  //     ctx.drawImage(image, canvas.width / 2 - 100, canvas.height - 400, 200, 100);
+  //   };
+  // }
+  // };
+  // certificateImage.src = imgUrl;
 }
